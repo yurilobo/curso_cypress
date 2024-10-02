@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import loc from '../../support/locators'
+
 describe('Should test at a functional level', () => {
     before(() => {
       cy.visit('barrigareact.wcaquino.me')
@@ -12,8 +13,8 @@ describe('Should test at a functional level', () => {
     it('Should create account', () => {
       cy.get(loc.MENU.SETTINGS).click()
       cy.get(loc.MENU.CONTAS).click()
-      cy.get(loc.MENU.NOME).type("Conta de teste yuri")
-      cy.get(loc.MENU.BTN_SALVAR).click()
+      cy.get(loc.CONTAS.NOME).type("Conta yuri")
+      cy.get(loc.CONTAS.BTN_SALVAR).click()
       cy.get(loc.MESSAGE).should('contain','Conta inserida com sucesso')
     })
     it('Should update account', () => {
